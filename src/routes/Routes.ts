@@ -1,9 +1,11 @@
 import express from 'express';
 
-import JobsRoutes from './JobsRoutes';
+import JobRoutes from './JobRoutes';
+import WorkRoutes from './WorkRoutes';
 
 const Routes = express.Router();
 
-Routes.use(JobsRoutes);
+Routes.use(JobRoutes);
+Routes.use(WorkRoutes);
 
 export default Routes;
