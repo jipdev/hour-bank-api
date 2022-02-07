@@ -1,12 +1,15 @@
+import dotenv from 'dotenv';
 import express from 'express';
+import routes from './routes/Routes';
+
+dotenv.config();
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT ?? 3000;
 
-app.get('/', (req, res) => {
-  res.send('Hello World!');
-});
+app.use(express.json());
+app.use(routes);
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+  console.log(`API listen http://localhost:${port}`);
 });
